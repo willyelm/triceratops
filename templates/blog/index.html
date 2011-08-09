@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!--<script type="text/javascript" language="javascript">   
+    function update() {
+        container = $("#container");
+        most_recent = container.find("div:first");
+        $.getJSON("json/" + most_recent.attr('id') + "/",
+            function(data) {
+                jQuery.each(data, function() {
+                    update_holder.prepend('<div id="'+this.fields.pub_date+'"><p>'
+                    +this.fields.title+'</p><p>'+ this.fields.pub_date+'</p></div>');
+                });
+            }
+        );
+    }    
+    $(document).ready(function() {
+        setInterval("update()",60000); // 1 sec = 1000
+    })	
+</script>-->
+
+<div id="container">
+    {% for object in object_list %}
+
+        {% if object.type = 'entry' %}
+            <div id="{{ object.datetime|date:"YmjHi" }}">
+                <h2>{{ object.entry.title }}</h2>
+                <h3>{{ object.datetime|date:"l, F jS H:i" }}</h3>
+                <p>{{ object.entry.intro_html|safe }}</p>
+                {% if object.entry.body_html %}
+                <p><a href="/{{ object.entry.slug }}/">click here to read the full article</a></p>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% if object.type = 'tweet' %}
+            <div class="tweet">
+                <p>tweet by <a href="http://www.twitter.com/{{ object.user }}/">{{ object.user }}</a> {{ object.datetime|timesince }} ago: <b>{{ object.tweet|safe }}</b>
+                </p>
+            </div>
+        {% endif %}
+        
+    {% endfor %}
+</div>
+
+{% endblock %}

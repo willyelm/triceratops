@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!--<script type="text/javascript" language="javascript">   
+    function update() {
+        container = $("#container");
+        most_recent = container.find("div:first");
+        $.getJSON("json/" + most_recent.attr('id') + "/",
+            function(data) {
+                jQuery.each(data, function() {
+                    update_holder.prepend('<div id="'+this.fields.pub_date+'"><p>'
+                    +this.fields.title+'</p><p>'+ this.fields.pub_date+'</p></div>');
+                });
+            }
+        );
+    }    
+    $(document).ready(function() {
+        setInterval("update()",60000); // 1 sec = 1000
+    })	
+</script>-->
+
+<div id="container">
+
+            <div id="{{ object.datetime|date:"YmjHi" }}">
+                <h2>{{ object.title }}</h2>
+                <h3>{{ object.pub_date|date:"l, F jS H:i" }}</h3>
+                <div class="entry_info">
+                    <p>Font size: A A A</p>
+                    <p>Printable version:</p>
+                    
+                    <ul class="tags">
+                        {% for tag in object.get_tags %}
+                            <li><a href="/tags/{{tag.name|slugify}}/">{{tag}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <p>{{ object.intro_html|safe }}</p>
+                <p>{{ object.body_html|safe }}</p>
+            </div>
+       
+</div>
+
+{% endblock %}

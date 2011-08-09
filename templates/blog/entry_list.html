@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<script type="text/javascript" language="javascript">   
+    function update() {
+        container = $("#container");
+        most_recent = container.find("div:first");
+        $.getJSON("json/" + most_recent.attr('id') + "/",
+            function(data) {
+                jQuery.each(data, function() {
+                    update_holder.prepend('<div id="'+this.fields.pub_date+'"><p>'
+                    +this.fields.title+'</p><p>'+ this.fields.pub_date+'</p></div>');
+                });
+            }
+        );
+    }    
+    $(document).ready(function() {
+        setInterval("update()",60000); // 1 sec = 1000
+    })	
+</script>
+
+<div id="container">
+    {% for object in object_list %}
+        <div id="{{ object.pub_date|date:"YmjHi" }}">
+            <p>{{ object.title }}</p>
+            <p>{{ object.pub_date|date:"l, F jS H:i" }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

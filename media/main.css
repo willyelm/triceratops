@@ -1,0 +1,305 @@
+/* RESET CSS FIRST... */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:100%;
+	font:inherit;
+	vertical-align:baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display:block;
+}
+body {
+	line-height:1;
+}
+ol, ul {
+	list-style:none;
+}
+blockquote, q {
+	quotes:none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content:'';
+	content:none;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+/* ----------------------------------------------------------------------- */
+
+body {
+    background-color:#fdfdfd;
+    font-family:'Open Sans',sans;
+    font-size:0.93em;
+    line-height:1.6em;
+    font-style:normal;
+    font-weight:normal;
+    text-align: justify;
+    -webkit-font-smoothing:antialiased;
+	-webkit-text-size-adjust:none;
+}
+
+a, a:visited  {
+	color:#00f;
+	border-bottom:0.1em dotted #00f;
+	* border-bottom:0.1em solid #00f;
+	text-decoration:none;
+}
+a:hover {
+	color:#00f;
+	border-bottom:0.1em solid #00f;
+}
+acronym  {
+	border-bottom:0.1em dotted #666;
+	* border-bottom:0.1em solid #666;
+	text-decoration:none;
+}
+p {
+    margin:1em;
+    line-height:1.8em;
+}
+
+li {
+    margin:0 2em;
+    list-style:disc;
+}
+
+b,strong {
+    font-weight:bold;
+}
+em {
+    font-style:italic;
+}
+
+code, pre {
+    font-family:'Menlo', monospace;
+    font-size:0.95em;
+}
+
+pre {
+    border-radius:0.25em;
+    -moz-border-radius:0.25em;
+    margin:1.2em;
+}
+
+pre.console, pre.console code {
+    background-color:#333;
+    color:#fff;
+    padding:0.5em;
+}
+
+pre.code {
+    border:0.1em solid #ccc;
+    padding:1em;
+}
+
+blockquote {
+    background-color:#eee;
+    border-radius:0.25em;
+    -moz-border-radius:0.25em;
+    -webkit-border-radius:0.25em;
+    margin:1em;
+    padding:0.1em;
+}
+
+div.error {
+    background-color:#f3dddd;
+    border-radius:0.25em;
+    -moz-border-radius:0.25em;
+    -webkit-border-radius:0.25em;
+    margin:1em;
+    padding:1em;
+}
+
+div.info {
+    background-color:#cceeff;
+    border-radius:0.25em;
+    -moz-border-radius:0.25em;
+    -webkit-border-radius:0.25em;
+    margin:1em;
+    padding:1em;
+}
+
+div.tweet {
+    background-color:#cceeff;
+    border-radius:0.25em;
+    -moz-border-radius:0.25em;
+    -webkit-border-radius:0.25em;
+    margin:1em;
+    padding:0.2em;
+}
+
+h2 {
+    font-size:1.4em;
+    font-weight:bold;
+    margin:1em 0.6em 0.4em 0.65em;
+}
+
+h3 {
+    color:#999;
+    margin:0 1em;
+}
+
+div.entry_info {
+    background:#ffc;
+    border:0.1em solid #e9e3aa;
+    border-radius:0.25em;
+    -moz-border-radius:0.25em;
+    -webkit-border-radius:0.25em;
+    clear:left;
+    float:right;
+    margin:-4em 1em 1em 2.5em;
+    text-align:justify;
+    width:17.2em;
+    position: relative;
+}
+
+div.entry_info p {
+    line-height:0.8em;
+}
+
+.tags{
+	margin:0;
+	padding:0;
+	list-style:none;
+	font-size:0.9em;
+	}
+
+.tags li, .tags a{
+	float:left;
+	position:relative;
+	}
+	
+.tags a, .tags a:hover, .tags a:visited {
+    padding:0.05em 0.7em 0.21em 1em;
+    margin:0 -2.5em 1em 0;
+    height:1.9em;
+	background:#e9e3aa;
+	border:none;
+	color:#000;
+	text-decoration:none;
+	-moz-border-radius-bottomright:0.3em;
+	-webkit-border-bottom-right-radius:0.3em;	
+	border-bottom-right-radius:0.3em;
+	-moz-border-radius-topright:0.3em;
+	-webkit-border-top-right-radius:0.3em;	
+	border-top-right-radius:0.3em;	
+}
+
+.tags a:before {
+    content:"";
+	float:left;
+	position:absolute;
+	top:0;
+	left:-0.98em;
+	width:0;
+	height:0;
+	border-color:transparent #e9e3aa transparent transparent;
+	border-style:solid;
+	border-width:0.98em 0.98em 0.98em 0;
+}
+
+.tags a:after{
+	content:"";
+	position:absolute;
+	top:0.7em;
+	left:0;
+	width:0.4em;
+	height:0.4em;
+	-moz-border-radius:0.25em;
+	-webkit-border-radius:0.25em;
+	border-radius:0.25em;
+	background:#ffc;
+}
+
+h1#title {
+    position:absolute;
+    left:0.25em;
+    top:0.21em;
+    font-size:3em;
+    line-height:1em;
+    padding-right:1em;
+}
+
+div#header {
+    background-color:#333;
+    color:#fff;
+    padding:0.42em 1em;
+    text-align:right;
+    border-top: 1.6em solid #333;
+}
+
+div#header a, div#header a:visited {
+    color:#fff;
+    border:none;
+    background-color:#666;
+    padding:0.4em 0.8em 0.5em 2.2em;
+    border-top:0.1em solid #888;
+    border-left:0.1em solid #555;
+    border-right:0.1em solid #777; 
+    border-bottom:0.1em solid #111;
+    background-size:1.15em;
+    -moz-border-radius-topleft:0.2em;
+	-webkit-border-top-left-radius:0.2em;	
+	border-top-left-radius:0.2em;
+	-moz-border-radius-topright:0.2em;
+	-webkit-border-top-right-radius:0.2em;	
+	border-top-right-radius:0.2em;
+    	background-repeat:no-repeat;
+    	background-position:0.7em 0.6em;
+}
+
+div#header a:hover {
+    background-color:#999;
+    border-color: #bbb #999 #666 #777;
+}
+
+div#header a.current {
+    background-color:#fff !important;
+    border-bottom:0.1em solid #fff !important;
+    color:#000 !important;
+}
+
+div#header a#blog {
+    background-image:url('/media/icons/book-open-text-image.png');
+}
+div#header a#archive {
+    background-image:url('/media/icons/wooden-box-label.png');
+
+}
+div#header a#about {
+    background-image:url('/media/icons/cards-bind-address.png');
+}
+div#header a#lifestream {
+    background-image:url('/media/icons/report-image.png');
+}
+
+@font-face {
+    font-family:'Caecilia LT Std';
+    src:url('/media/fonts/caecilialtstd-roman-webfont.eot');
+    src:url('/media/fonts/caecilialtstd-bold-webfont.eot?iefix') format('embedded-opentype'),
+         url('/media/fonts/caecilialtstd-roman-webfont.woff') format('woff'),
+         url('/media/fonts/caecilialtstd-roman-webfont.ttf') format('truetype'),
+         url('/media/fonts/caecilialtstd-roman-webfont.svg') format('svg');
+}
+
+

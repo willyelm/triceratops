@@ -28,8 +28,9 @@ class Entry(models.Model):
     """
     
     title = models.CharField(max_length=150,help_text='Maximum 150 characters.')
-    slug = models.SlugField(unique_for_date='pub_date',help_text='Automatically built from the title.')
-    body_html = models.TextField(blank=True)
+    slug = models.SlugField(unique_for_date='pub_date',unique=True,help_text='Automatically built from the title.')
+    intro_html = models.TextField(blank=True,help_text='Introduction')
+    body_html = models.TextField(blank=True,help_text='Full article')
     pub_date = models.DateTimeField('Date published.',default=datetime.now())
     categories = models.ManyToManyField(Category)
     tags = TagField();

@@ -12,7 +12,7 @@ class EntryAdmin(admin.ModelAdmin):
     list_filter = ('pub_date','status')
     prepopulated_fields = {"slug":('title',)}
     fieldsets = (
-        (None, {'fields':(('title', 'status'),'body_html','categories','tags','slug')}),
+        (None, {'fields':(('title', 'status'),'pub_date','intro_html','body_html','categories','tags','slug')}),
     )
 
 admin.site.register(Category,CategoryAdmin)

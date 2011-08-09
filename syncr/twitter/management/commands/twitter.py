@@ -31,7 +31,7 @@ class Command(BaseCommand):
                          settings.TWITTER_OAUTH['token_secret'],
                         )
 
-        for sync in settings.TWITTER_USERS:
+        for sync in settings.TWITTER_FOLLOW:
             t.syncUser(sync)
             t.syncTwitterUserTweets(sync)
             logging.info('Sychronized')

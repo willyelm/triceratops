@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!--<script type="text/javascript" language="javascript">   
+    function update() {
+        container = $("#container");
+        most_recent = container.find("div:first");
+        $.getJSON("json/" + most_recent.attr('id') + "/",
+            function(data) {
+                jQuery.each(data, function() {
+                    update_holder.prepend('<div id="'+this.fields.pub_date+'"><p>'
+                    +this.fields.title+'</p><p>'+ this.fields.pub_date+'</p></div>');
+                });
+            }
+        );
+    }    
+    $(document).ready(function() {
+        setInterval("update()",60000); // 1 sec = 1000
+    })	
+</script>-->
+
+<div id="container">
+    {% for year, month_list in archives %}
+        <p><a href="/{{year}}/">{{year}}</a>:<ul>
+        {% for month, has_link in month_list %}
+            {% if has_link %}<a href="/{{ month.year }}/{{ month.month }}/">{% endif %}
+              <li>{{ month|date:"F" }}</li>
+            {% if has_link %}</a>{% endif %}
+        {% endfor %}</ul></p>
+    {% endfor %}
+</div>
+
+{% endblock %}
