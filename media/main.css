@@ -47,13 +47,13 @@ table {
 /* ----------------------------------------------------------------------- */
 
 body {
-    background-color:#fdfdfd;
+    background-color:#f5f5f5;
     font-family:'Open Sans',sans;
     font-size:0.93em;
     line-height:1.6em;
     font-style:normal;
     font-weight:normal;
-    text-align: justify;
+
     -webkit-font-smoothing:antialiased;
 	-webkit-text-size-adjust:none;
 }
@@ -68,6 +68,7 @@ a:hover {
 	color:#00f;
 	border-bottom:0.1em solid #00f;
 }
+
 acronym  {
 	border-bottom:0.1em dotted #666;
 	* border-bottom:0.1em solid #666;
@@ -76,6 +77,7 @@ acronym  {
 p {
     margin:1em;
     line-height:1.8em;
+    clear: left;
 }
 
 li {
@@ -108,12 +110,17 @@ pre.console, pre.console code {
 }
 
 pre.code {
-    border:0.1em solid #ccc;
+    background-color:#fff;
+    border:0.1em solid #ddd;
+    border-radius:0.25em;
+    -moz-border-radius:0.25em;
+    -webkit-border-radius:0.25em;
     padding:1em;
 }
 
 blockquote {
     background-color:#eee;
+    border:0.1em solid #ddd;
     border-radius:0.25em;
     -moz-border-radius:0.25em;
     -webkit-border-radius:0.25em;
@@ -123,6 +130,7 @@ blockquote {
 
 div.error {
     background-color:#f3dddd;
+    border:0.1em solid #e2cccc;
     border-radius:0.25em;
     -moz-border-radius:0.25em;
     -webkit-border-radius:0.25em;
@@ -131,12 +139,14 @@ div.error {
 }
 
 div.info {
-    background-color:#cceeff;
+    background:#ffc;
+    border:0.1em solid #e9e3aa;
     border-radius:0.25em;
     -moz-border-radius:0.25em;
     -webkit-border-radius:0.25em;
     margin:1em;
     padding:1em;
+
 }
 
 div.tweet {
@@ -152,24 +162,28 @@ h2 {
     font-size:1.4em;
     font-weight:bold;
     margin:1em 0.6em 0.4em 0.65em;
+    text-shadow: rgba(255, 255, 255, 0.796875) 0px 1px 0px;
+    outline-color: rgba(0, 0, 0, 0.816406);
+    clear: left;
 }
 
+h2 a, h2 a:hover, h2 a:visited {
+    color: #000;
+    text-decoration: none;
+    border: none;
+}
 h3 {
     color:#999;
     margin:0 1em;
 }
 
 div.entry_info {
-    background:#ffc;
-    border:0.1em solid #e9e3aa;
-    border-radius:0.25em;
-    -moz-border-radius:0.25em;
-    -webkit-border-radius:0.25em;
-    clear:left;
+    color: #999;
+    clear:both;
     float:right;
     margin:-4em 1em 1em 2.5em;
     text-align:justify;
-    width:17.2em;
+    width:18.3em;
     position: relative;
 }
 
@@ -182,53 +196,61 @@ div.entry_info p {
 	padding:0;
 	list-style:none;
 	font-size:0.9em;
-	}
-
+	}	
 .tags li, .tags a{
 	float:left;
 	position:relative;
-	}
-	
-.tags a, .tags a:hover, .tags a:visited {
-    padding:0.05em 0.7em 0.21em 1em;
+	list-style:none;
+	}	
+.tags a, .tags a:hover, .tags a:visited{
+	padding:0.05em 0.7em 0.21em 1em;
     margin:0 -2.5em 1em 0;
-    height:1.9em;
-	background:#e9e3aa;
+    height:1.8em;
+	background:#da7;
 	border:none;
 	color:#000;
 	text-decoration:none;
+	border-right:0.1em solid #b85;
+	border-bottom:0.1em solid #b85;
 	-moz-border-radius-bottomright:0.3em;
 	-webkit-border-bottom-right-radius:0.3em;	
 	border-bottom-right-radius:0.3em;
 	-moz-border-radius-topright:0.3em;
 	-webkit-border-top-right-radius:0.3em;	
-	border-top-right-radius:0.3em;	
-}
-
-.tags a:before {
-    content:"";
+	border-top-right-radius:0.3em;
+	}
+.tags a:before{
+	content:"";
 	float:left;
 	position:absolute;
 	top:0;
 	left:-0.98em;
 	width:0;
 	height:0;
-	border-color:transparent #e9e3aa transparent transparent;
+	border-color:transparent #da7 transparent transparent;
 	border-style:solid;
-	border-width:0.98em 0.98em 0.98em 0;
-}
-
+	border-width:0.99em 0.99em 0.99em 0;		
+	}	
 .tags a:after{
 	content:"";
 	position:absolute;
-	top:0.7em;
+	top:0.8em;
 	left:0;
 	width:0.4em;
 	height:0.4em;
+	border-left:0.1em solid #b85;
+	border-right:0.1em solid #b85;
+	border-top:0.1em solid #b85;
 	-moz-border-radius:0.25em;
 	-webkit-border-radius:0.25em;
 	border-radius:0.25em;
-	background:#ffc;
+	background:#f5f5f5;
+	}
+.tags a:hover {
+    background-color: #eb8;
+}
+.tags a:hover:before {
+    border-color:transparent #eb8 transparent transparent;
 }
 
 h1#title {
@@ -238,12 +260,13 @@ h1#title {
     font-size:3em;
     line-height:1em;
     padding-right:1em;
+    color: #ccc;
 }
 
 div#header {
     background-color:#333;
     color:#fff;
-    padding:0.42em 1em;
+    padding:0.44em 1em;
     text-align:right;
     border-top: 1.6em solid #333;
 }
@@ -251,7 +274,6 @@ div#header {
 div#header a, div#header a:visited {
     color:#fff;
     border:none;
-    background-color:#666;
     padding:0.4em 0.8em 0.5em 2.2em;
     border-top:0.1em solid #888;
     border-left:0.1em solid #555;
@@ -264,8 +286,9 @@ div#header a, div#header a:visited {
 	-moz-border-radius-topright:0.2em;
 	-webkit-border-top-right-radius:0.2em;	
 	border-top-right-radius:0.2em;
+	background-color:#666;
     	background-repeat:no-repeat;
-    	background-position:0.7em 0.6em;
+    	background-position:0.7em 0.6em !important;
 }
 
 div#header a:hover {
@@ -274,32 +297,75 @@ div#header a:hover {
 }
 
 div#header a.current {
-    background-color:#fff !important;
-    border-bottom:0.1em solid #fff !important;
+    background-color:#f5f5f5 !important;
+    border-bottom:0.1em solid #f5f5f5 !important;
     color:#000 !important;
 }
 
-div#header a#blog {
-    background-image:url('/media/icons/book-open-text-image.png');
-}
 div#header a#archive {
-    background-image:url('/media/icons/wooden-box-label.png');
+    background-image:url('/media/icons/calendar-day.png');
+}
 
-}
 div#header a#about {
-    background-image:url('/media/icons/cards-bind-address.png');
+    background-image:url('/media/icons/server.png');
 }
-div#header a#lifestream {
+
+div#header a#blog {
     background-image:url('/media/icons/report-image.png');
 }
 
-@font-face {
-    font-family:'Caecilia LT Std';
-    src:url('/media/fonts/caecilialtstd-roman-webfont.eot');
-    src:url('/media/fonts/caecilialtstd-bold-webfont.eot?iefix') format('embedded-opentype'),
-         url('/media/fonts/caecilialtstd-roman-webfont.woff') format('woff'),
-         url('/media/fonts/caecilialtstd-roman-webfont.ttf') format('truetype'),
-         url('/media/fonts/caecilialtstd-roman-webfont.svg') format('svg');
+div.filmstrip {
+	overflow-x: hidden;
+	overflow-y: hidden;
+	padding: 0;
+	background-color: #000;
+	width: 483px;
+	margin: 1em;
 }
+
+div.filmstrip:before {
+    content:"";
+	float:left;
+	position:relative;
+
+	width:60px;
+	height:115px;
+	background: #f5f5f5 url(/media/filmroll3.png) -33px 0px repeat-x;
+}
+
+ul.imagerow {
+	height: 89px;
+	background: url(/media/filmrollbg.png) 0 0 repeat-x;
+	padding: 14px 0;
+}
+
+ul.imagerow li {
+	float: left;
+	display: block;
+	padding: 8px 0 8px 8px;
+	margin: 0px;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+}
+
+ul.imagerow li:hover {
+    opacity: 1.0;
+	filter: alpha(opacity=100);
+}
+
+ul.imagerow li img {
+	border: 0;
+	height: 75px;
+	width: 75px;
+	margin: 0;
+	padding:0;
+}
+
+ul.header-menu li {
+    list-style: none;
+    display: inline;
+    margin: 0;
+}
+
 
 
